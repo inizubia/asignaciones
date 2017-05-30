@@ -1,0 +1,4 @@
+services:
+#    izj_user.example:
+#        class: IZJ\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,3 +1,7 @@
+izj_user:
+    resource: "@IZJUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
