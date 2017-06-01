@@ -15,6 +15,10 @@ izj_user_create:
     defaults: { _controller: IZJUserBundle:User:create }
     methods: POST
 
+izj_user_create:
+    path:     /user/create
+    defaults: {_controller: IZJUserBundle:User:create}
+
 izj_user_edit:
     path:     /user/edit/{id}
     defaults: { _controller: IZJUserBundle:User:edit }
