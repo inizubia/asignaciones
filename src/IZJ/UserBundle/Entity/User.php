@@ -3,14 +3,16 @@
 namespace IZJ\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
  *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="IZJ\UserBundle\Repository\UserRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -310,5 +312,36 @@ class User
     {
         return $this->updateAt;
     }
-}
 
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreateAtValue()
+    {
+        $this->createAt = new \DateTime();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function setUpdateAtValue()
+    {
+        $this->updateAt = new \DateTime();
+    }
+
+    public function getRoles()
+    {
+
+    }
+
+    public function getSalt()
+    {
+
+    }
+
+    public function eraseCredentials()
+    {
+        
+    }
+}

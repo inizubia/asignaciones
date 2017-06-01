@@ -10,6 +10,10 @@ izj_user_add:
     path:     /user/add
     defaults: {_controller: IZJUserBundle:User:add}
 
+izj_user_create:
+    path:     /user/create
+    defaults: {_controller: IZJUserBundle:User:create}
+
 izj_user_edit:
     path:     /user/edit/{id}
     defaults: {_controller: IZJUserBundle:User:edit}
