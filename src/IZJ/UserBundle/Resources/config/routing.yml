@@ -30,3 +30,10 @@ izj_user_view:
 izj_user_delete:
     path:     /user/delete/{id}
     defaults: { _controller: IZJUserBundle:User:delete } 
+
+izj_user_redirect_add:
+    path:     /user/create
+    defaults:  
+        _controller: IZJUserBundle:User:add 
+        path: /user/add
+        permanent: true
