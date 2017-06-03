@@ -10,11 +10,11 @@ use IZJ\UserBundle\Form\UserType;
 
 class UserController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $users = $em->getRepository('IZJUserBundle:User')->findAll();
+        // $users = $em->getRepository('IZJUserBundle:User')->findAll();
 
         /*
         $res = 'Lista de Usuarios: <br />';
@@ -27,7 +27,16 @@ class UserController extends Controller
         return new Response($res);
         */
 
-        return $this->render('IZJUserBundle:User:index.html.twig', array('users' => $users));
+        $dql = "SELECT u FROM IZJUserBundle:User u";
+        $users = $em->createQuery($dql);
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+        	$users, $request->query->getInt('page',1),
+        	3
+        );
+
+        return $this->render('IZJUserBundle:User:index.html.twig', array('pagination' => $pagination));
     }
 
     public function addAction()
@@ -69,6 +78,9 @@ class UserController extends Controller
         	$em = $this->getDoctrine()->getManager();
         	$em->persist($user);
         	$em->flush();
+
+        	$successMessage = $this->get('translator')->trans('The user has been created.');
+        	$this->addFlash('mensaje',$successMessage);
 
         	return $this->redirectToRoute('izj_user_index');
     	}
