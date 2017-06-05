@@ -126,6 +126,14 @@
                 <source>The user has been modified.</source>
                 <target>El usuario ha sido modificado.</target>
             </trans-unit>
+            <trans-unit id="32">
+                <source>Disabled</source>
+                <target>Deshabilitado</target>
+            </trans-unit>            
+            <trans-unit id="33">
+                <source>Enabled</source>
+                <target>Habilitado</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

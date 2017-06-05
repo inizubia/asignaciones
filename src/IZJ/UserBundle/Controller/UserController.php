@@ -190,15 +190,19 @@ class UserController extends Controller
     public function viewAction($id)
     {
         $repository = $this->getDoctrine()->getRepository('IZJUserBundle:User');
-
-        /*
-        user = $repository->find($id);
+     
+        $user = $repository->find($id);
 
         //$user = $repository->findOneById($id);
-
         //$user = $repository->findOneByUsername($nombre);
+        //return new Response('Usuario: ' . $user->getUserName() . ' con email: ' . $user->getEmail());
 
-        return new Response('Usuario: ' . $user->getUserName() . ' con email: ' . $user->getEmail());
-        */
+        if(!$user)
+        {
+            $messageException = $this->get('translator')->trans('User not found.');
+            throw  $this->createNotFoundException($messageException);
+        }
+       
+        return $this->render('IZJUserBundle:User:view.html.twig', array('user' => $user));       
     }
 }
