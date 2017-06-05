@@ -42,7 +42,9 @@
 								<td>{{ user.updateAt|date('d-m-Y H:i')}}</td>
 								<td>
 									<a href="#" class="btn btn-sm btn-info">{{'View'| trans}} </a>
-									<a href="#" class="btn btn-sm btn-primary">{{'Edit'| trans}} </a>
+									<a href="{{ path('izj_user_edit', {id: user.id}) }}"
+										class="btn btn-sm btn-primary">{{'Edit'| trans}} 
+									</a>
 									<a href="#" class="btn btn-sm btn-danger btn-delete">{{'Delete'| trans}} </a>
 								</td>
 							</tr>

@@ -23,6 +23,11 @@ izj_user_edit:
     path:     /user/edit/{id}
     defaults: { _controller: IZJUserBundle:User:edit }
 
+izj_user_update:
+    path:     /user/update/{id}
+    defaults: { _controller: IZJUserBundle:User:update }
+    methods: [POST, PUT]
+
 izj_user_view:
     path:     /user/view/{id}
     defaults: { _controller: IZJUserBundle:User:view }
@@ -36,4 +41,11 @@ izj_user_redirect_add:
     defaults:  
         _controller: IZJUserBundle:User:add 
         path: /user/add
+        permanent: true
+
+izj_user_redirect_edit:
+    path:     /user/update/{id}
+    defaults:  
+        _controller: IZJUserBundle:User:edit 
+        path: /user/edit{id}
         permanent: true
