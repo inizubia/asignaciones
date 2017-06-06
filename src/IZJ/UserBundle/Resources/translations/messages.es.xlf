@@ -134,6 +134,18 @@
                 <source>Enabled</source>
                 <target>Habilitado</target>
             </trans-unit>
+            <trans-unit id="34">
+                <source>Delete user</source>
+                <target>Eliminar usuario</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>The user has been deleted.</source>
+                <target>El usuario ha sido eliminado.</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>Are you sure ?</source>
+                <target>¿Estas seguro ?</target>
+            </trans-unit>             
         </body>
     </file>
 </xliff>

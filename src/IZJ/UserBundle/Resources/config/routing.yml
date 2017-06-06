@@ -35,6 +35,7 @@ izj_user_view:
 izj_user_delete:
     path:     /user/delete/{id}
     defaults: { _controller: IZJUserBundle:User:delete } 
+    methods: [POST, DELETE]
 
 izj_user_redirect_add:
     path:     /user/create
