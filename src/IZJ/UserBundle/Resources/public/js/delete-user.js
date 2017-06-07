@@ -19,7 +19,7 @@ $(document).ready(function(){
 		bootbox.confirm(message, function(res){
 			if(res == true)
 			{
-				$('#delete-progress').revomeClass('hidden');
+				$('#delete-progress').removeClass('hidden');
 
 				$.post(url, data, function(result){
 
