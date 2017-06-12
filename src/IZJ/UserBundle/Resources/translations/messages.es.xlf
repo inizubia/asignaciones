@@ -149,6 +149,14 @@
             <trans-unit id="37">
                 <source>The user could not be deleted.</source>
                 <target>El usuario no ha sido eliminado.</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>Search user</source>
+                <target>Buscar usuario</target>
+            </trans-unit> 
+            <trans-unit id="39">
+                <source>Search</source>
+                <target>Buscar</target>
             </trans-unit>            
         </body>
     </file>
