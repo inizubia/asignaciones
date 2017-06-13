@@ -15,7 +15,6 @@ class UserController extends Controller
     public function indexAction(Request $request)
     {
        
-
         // $users = $em->getRepository('IZJUserBundle:User')->findAll();
 
         /*
@@ -46,7 +45,7 @@ class UserController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
         	$users, $request->query->getInt('page',1),
-        	4
+        	5
         );
 
         $deleteFormAjax = $this->createCustomForm(':USER_ID', 'DELETE', 'izj_user_delete');
