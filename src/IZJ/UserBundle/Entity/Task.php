@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="tasks")
  * @ORM\Entity(repositoryClass="IZJ\UserBundle\Repository\TaskRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Task
 {
@@ -192,6 +193,24 @@ class Task
     {
         return $this->updateAt;
     }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreateAtValue()
+    {
+        $this->createAt = new \DateTime();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function setUpdateAtValue()
+    {
+        $this->updateAt = new \DateTime();
+    }
+
 
     /**
      * Set user

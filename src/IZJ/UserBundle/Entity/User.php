@@ -401,4 +401,9 @@ class User implements UserInterface
     {
         return $this->tasks;
     }
+
+    public function getFullName()
+    {
+        return $this->firstName. " " . $this->lastName;
+    }
 }

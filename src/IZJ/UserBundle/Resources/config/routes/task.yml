@@ -1,0 +1,52 @@
+izj_task_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IZJUserBundle:Default:index }
+
+izj_task_index:
+    path:     /index
+    defaults: { _controller: IZJUserBundle:Task:index }
+
+izj_task_add:
+    path:     /add
+    defaults: { _controller: IZJUserBundle:Task:add }
+
+izj_task_create:
+    path:     /create
+    defaults: { _controller: IZJUserBundle:Task:create }
+    methods: POST
+
+izj_task_create:
+    path:     /create
+    defaults: {_controller: IZJUserBundle:Task:create}
+
+izj_task_edit:
+    path:     /edit/{id}
+    defaults: { _controller: IZJUserBundle:Task:edit }
+
+izj_task_update:
+    path:     /update/{id}
+    defaults: { _controller: IZJUserBundle:Task:update }
+    methods: [POST, PUT]
+
+izj_task_view:
+    path:     /view/{id}
+    defaults: { _controller: IZJUserBundle:Task:view }
+
+izj_task_delete:
+    path:     /delete/{id}
+    defaults: { _controller: IZJUserBundle:Task:delete } 
+    methods: [POST, DELETE]
+
+izj_task_redirect_add:
+    path:     /create
+    defaults:  
+        _controller: IZJUserBundle:Task:add 
+        path: /add
+        permanent: true
+
+izj_task_redirect_edit:
+    path:     /update/{id}
+    defaults:  
+        _controller: IZJUserBundle:Task:edit 
+        path: /edit{id}
+        permanent: true
