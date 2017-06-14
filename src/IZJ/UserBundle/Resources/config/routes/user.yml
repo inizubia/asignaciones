@@ -1,0 +1,52 @@
+izj_user_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IZJUserBundle:Default:index }
+
+izj_user_index:
+    path:     /index
+    defaults: { _controller: IZJUserBundle:User:index }
+
+izj_user_add:
+    path:     /add
+    defaults: { _controller: IZJUserBundle:User:add }
+
+izj_user_create:
+    path:     /create
+    defaults: { _controller: IZJUserBundle:User:create }
+    methods: POST
+
+izj_user_create:
+    path:     /create
+    defaults: {_controller: IZJUserBundle:User:create}
+
+izj_user_edit:
+    path:     /edit/{id}
+    defaults: { _controller: IZJUserBundle:User:edit }
+
+izj_user_update:
+    path:     /update/{id}
+    defaults: { _controller: IZJUserBundle:User:update }
+    methods: [POST, PUT]
+
+izj_user_view:
+    path:     /view/{id}
+    defaults: { _controller: IZJUserBundle:User:view }
+
+izj_user_delete:
+    path:     /delete/{id}
+    defaults: { _controller: IZJUserBundle:User:delete } 
+    methods: [POST, DELETE]
+
+izj_user_redirect_add:
+    path:     /create
+    defaults:  
+        _controller: IZJUserBundle:User:add 
+        path: /add
+        permanent: true
+
+izj_user_redirect_edit:
+    path:     /update/{id}
+    defaults:  
+        _controller: IZJUserBundle:User:edit 
+        path: /edit{id}
+        permanent: true
