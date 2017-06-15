@@ -157,7 +157,63 @@
             <trans-unit id="39">
                 <source>Search</source>
                 <target>Buscar</target>
-            </trans-unit>            
+            </trans-unit>
+            <trans-unit id="40">
+                <source>Tasks</source>
+                <target>Tareas</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>Title</source>
+                <target>Título</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>Date</source>
+                <target>Fecha</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>Status</source>
+                <target>Fecha</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>New task</source>
+                <target>Nueva tarea</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>List tasks</source>
+                <target>Todas las tareas</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>New task</source>
+                <target>Nueva tarea</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>Task title</source>
+                <target>Título de la tarea</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>Task description</source>
+                <target>Descripción de la tarea</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>Description</source>
+                <target>Descripción</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>Create task</source>
+                <target>Crear tarea</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>The task has been created.</source>
+                <target>La tarea ha sido creada.</target>
+            </trans-unit>    
+            <trans-unit id="52">
+                <source>Waiting</source>
+                <target>En espera</target>
+            </trans-unit>  
+            <trans-unit id="53">
+                <source>Finish</source>
+                <target>Finalizado</target>
+            </trans-unit>  
         </body>
     </file>
 </xliff> 

@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="page-header margin-none">
-				<h2 class="padding-none">Task</h2>
+				<h2 class="padding-none">{% trans %}Tasks{% endtrans %}</h2>
 			</div>
 			<div class="table-responsive">
 				{% trans %}Total records: {% endtrans %} <span id="total">{{ pagination.getTotalItemCount }}</span>
@@ -15,10 +15,10 @@
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
-							<th>{{ knp_pagination_sortable(pagination, 'Title', 't.title') }} </th>
-							<th>{{ knp_pagination_sortable(pagination, 'Date', 't.createAt') }} </th>
-							<th>{{ 'User'}} </th>
-							<th>{{ knp_pagination_sortable(pagination, 'Status', 't.status') }} </th>
+							<th>{{ knp_pagination_sortable(pagination, 'Title'|trans, 't.title') }} </th>
+							<th>{{ knp_pagination_sortable(pagination, 'Date'|trans, 't.createAt') }} </th>
+							<th>{{ 'User'|trans}} </th>
+							<th>{{ knp_pagination_sortable(pagination, 'Status'|trans, 't.status') }} </th>
 						</tr>
 					</thead>
 

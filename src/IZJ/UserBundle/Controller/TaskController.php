@@ -58,7 +58,8 @@ class TaskController extends Controller
 			$em->persist($task);
 			$em->flush();
 
-			$this->addFlash('mensaje', 'The task has been created.');
+			$successMessage = $this->get('translator')->trans('The task has been created.');
+			$this->addFlash('mensaje', $successMessage);
 			return $this->redirectToRoute('izj_task_index');
 		}
 
