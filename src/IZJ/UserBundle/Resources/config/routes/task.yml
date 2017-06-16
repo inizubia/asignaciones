@@ -44,6 +44,15 @@ izj_task_redirect_add:
         path: /add
         permanent: true
 
+izj_task_custom:
+    path:     /custom
+    defaults: { _controller: IZJUserBundle:Task:custom }
+
+izj_task_process:
+    path:     /process/{id}
+    defaults: { _controller: IZJUserBundle:Task:process }
+    methods: [POST, PUT]
+
 izj_task_redirect_edit:
     path:     /update/{id}
     defaults:  

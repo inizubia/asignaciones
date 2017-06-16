@@ -254,6 +254,26 @@
                 <source>Logout</source>
                 <target>Salir</target>
             </trans-unit>
+            <trans-unit id="64">
+                <source>My tasks</source>
+                <target>Mis tareas</target>
+            </trans-unit>
+            <trans-unit id="65">
+                <source>Finish</source>
+                <target>Finalizar</target>
+            </trans-unit>
+            <trans-unit id="66">
+                <source>No tasks</source>
+                <target>No hay tareas</target>
+            </trans-unit>
+            <trans-unit id="67">
+                <source>The task was been finished.</source>
+                <target>La tarea fue finalizada.</target>
+            </trans-unit>
+            <trans-unit id="68">
+                <source>The task has already been finished.</source>
+                <target>La tarea ya ha sido finalizada.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff> 

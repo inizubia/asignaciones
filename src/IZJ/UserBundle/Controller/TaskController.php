@@ -27,6 +27,74 @@ class TaskController extends Controller
 		return $this->render('IZJUserBundle:Task:index.html.twig', array('pagination' => $pagination));
 	}
 
+	public function customAction(Request $request)
+	{
+		$idUser = $this->get('security.token_storage')->getToken()->getUser()->getId();
+
+		$em = $this->getDoctrine()->getManager();
+		$dql = "SELECT t FROM IZJUserBundle:Task t JOIN t.user u WHERE u.id = :idUser ORDER BY t.id DESC";
+
+		$tasks = $em->createQuery($dql)->setParameter('idUser', $idUser);
+
+		$paginator = $this->get('knp_paginator');
+		$pagination = $paginator->paginate(
+			$tasks,
+			$request->query->getInt('page',1),
+			3
+		);
+
+		$updateForm = $this->createCustomForm(':TASK_ID', 'PUT', 'izj_task_process') ;
+
+		return $this->render('IZJUserBundle:Task:custom.html.twig', array('pagination' => $pagination, 'update_form' => $updateForm->createView()));
+	}
+
+	public function processAction($id, Request $request)
+	{
+		$em = $this->getDoctrine()->getManager();
+
+		$task = $em->getRepository('IZJUserBundle:Task')->find($id);
+
+		if(!$task)
+		{
+			throw $this->createNotFoundException('Task not found');
+		}
+
+		$form = $this->createCustomForm($task->getId(), 'PUT', 'izj_task_process');
+		$form->handleRequest($request);
+
+		if($form->isSubmitted() && $form->isValid())
+		{
+			$successMessage = $this->get('translator')->trans('The task was been finished.');
+            $warningMessage = $this->get('translator')->trans('The task has already been finished.');
+
+			if($task->getStatus() == 0)
+			{
+				$task->setStatus(1);
+				$em->flush();
+
+				if($request->isXMLHttpRequest())
+                {
+                    return new Response(
+                        json_encode(array('processed' => 1, 'success' => $successMessage)),
+                        200,
+                        array('Content-Type' => 'application/json')
+                    );
+                }
+			}
+			else
+			{
+				if($request->isXMLHttpRequest())
+                {
+                    return new Response(
+                        json_encode(array('processed' => 0, 'warning' => $warningMessage)),
+                        200,
+                        array('Content-Type' => 'application/json')
+                    );
+                }
+			}
+		}
+	}
+
 	public function addAction()
 	{
 		$task = new Task();
