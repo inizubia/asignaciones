@@ -12,6 +12,11 @@ use IZJ\UserBundle\Form\UserType;
 
 class UserController extends Controller
 {
+    public function homeAction()
+    {
+        return $this->render('IZJUserBundle:User:home.html.twig');
+    }
+
     public function indexAction(Request $request)
     {
        

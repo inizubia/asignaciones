@@ -5,3 +5,20 @@ izj_user_user:
 izj_task_task:
     resource: "@IZJUserBundle/Resources/config/routes/task.yml"
     prefix:   /task
+
+# Autentication
+
+izj_user_homepage:
+    path:     /
+    defaults: { _controller: IZJUserBundle:User:home }
+
+izj_user_login:
+    path:     /login
+    defaults: { _controller: IZJUserBundle:Security:login }
+
+izj_user_login_check:
+    path:     /login_check
+    defaults: { _controller: IZJUserBundle:Security:loginCheck }
+
+izj_user_logout:
+    path:     /logout
