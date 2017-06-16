@@ -25,7 +25,9 @@
 					<tbody>
 						{% for task in pagination %}
 							<tr data-id="{{ task.id }}">
-								<td>{{ task.title}}</td>
+								<td>
+									<a href="{{ path('izj_task_view', {id:task.id}) }}"> {{ task.title}} </a>
+								</td>
 								<td>{{ task.createAt|date('d-m-Y H:i')}}</td>
 								<td>{{ task.user.fullName}}</td>
 								<td>
